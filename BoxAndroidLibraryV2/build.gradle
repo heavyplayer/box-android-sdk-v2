@@ -16,11 +16,11 @@ repositories {
 }
 
 dependencies {
-	compile 'com.box.boxjavalibv2:BoxJavaLibraryV2:1.0'
+	compile project(':Todoist:libraries:box-java-sdk-v2:BoxJavaLibraryV2')
 	compile 'com.fasterxml.jackson.core:jackson-annotations:2.2.2'
 	compile 'com.fasterxml.jackson.core:jackson-core:2.2.2'
 	compile 'com.fasterxml.jackson.core:jackson-databind:2.2.2'
-	compile 'com.google.android:support-v4:r13'
+    compile 'com.android.support:support-v4:19.0.+'
 	compile 'commons-codec:commons-codec:1.8'
 	compile 'commons-io:commons-io:2.4'
 	compile 'commons-lang:commons-lang:2.6'
