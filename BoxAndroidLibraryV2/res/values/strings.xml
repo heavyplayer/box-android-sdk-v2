@@ -13,5 +13,7 @@
     <string name="boxandroidlibv2_Problem_fetching_folder">Problem fetching folder.</string>
     <string name="boxandroidlibv2_Create_folder">Create folder</string>
     <string name="boxandroidlibv2_Authenticating">Authenticating</string>
+    <string name="boxandroidlibv2_Creating_shared_link">Creating shared link</string>
+	<string name="boxandroidlibv2_Problem_fetching_file">Problem fetching file.</string>
 
 </resources>
