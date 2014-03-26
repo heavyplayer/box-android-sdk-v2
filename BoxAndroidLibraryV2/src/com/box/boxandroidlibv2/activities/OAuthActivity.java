@@ -1,14 +1,12 @@
 package com.box.boxandroidlibv2.activities;
 
-import org.apache.commons.lang.StringUtils;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.http.SslError;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.SslErrorHandler;
-
 import com.box.boxandroidlibv2.BoxAndroidClient;
 import com.box.boxandroidlibv2.R;
 import com.box.boxandroidlibv2.dao.BoxAndroidOAuthData;
@@ -17,6 +15,7 @@ import com.box.boxandroidlibv2.views.OAuthWebView;
 import com.box.boxjavalibv2.events.OAuthEvent;
 import com.box.boxjavalibv2.interfaces.IAuthEvent;
 import com.box.boxjavalibv2.interfaces.IAuthFlowMessage;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * Activity for OAuth. Use this activity by using the intent from createOAuthActivityIntent method. On completion, this activity will put the parcelable
@@ -104,6 +103,11 @@ public class OAuthActivity extends Activity {
                     intent.putExtra(BOX_CLIENT_OAUTH, (BoxAndroidOAuthData) message.getData());
                     OAuthActivity.this.setResult(RESULT_OK, intent);
                     finish();
+                }
+	            else if (event == OAuthEvent.PAGE_FINISHED) {
+	                final View progress = findViewById(android.R.id.progress);
+	                if(progress != null)
+		                progress.setVisibility(View.GONE);
                 }
             }
 
